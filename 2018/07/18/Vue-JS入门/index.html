@@ -108,22 +108,27 @@
 
 
 
-  <meta name="keywords" content="Vue.JS,基础">
+  <meta name="description" content="#Vue.JS特点  是一套构建用户界面的渐进式框架 只关注图层，采用自顶向上增量开发的设计 响应式数据绑定+组合视图组件 通过mvvm的数据绑定实现自动同步  Object.defineproperty() 核心思想：数据驱动；组件化  #与React的区别相同点    利用Virtual Dom实现快速渲染   轻量级响应式组件服务器端渲染   易于集成路由工具、打包工具以及状态管理工具">
+<meta name="keywords" content="Vue.JS,基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue.JS入门">
-<meta property="og:url" content="https://minnsss.github.io/2018/07/16/Vue-JS入门/index.html">
+<meta property="og:title" content="Vue.JS入门基础">
+<meta property="og:url" content="https://minnsss.github.io/2018/07/18/Vue-JS入门/index.html">
 <meta property="og:site_name" content="minnsss blog">
+<meta property="og:description" content="#Vue.JS特点  是一套构建用户界面的渐进式框架 只关注图层，采用自顶向上增量开发的设计 响应式数据绑定+组合视图组件 通过mvvm的数据绑定实现自动同步  Object.defineproperty() 核心思想：数据驱动；组件化  #与React的区别相同点    利用Virtual Dom实现快速渲染   轻量级响应式组件服务器端渲染   易于集成路由工具、打包工具以及状态管理工具">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-16T16:19:37.300Z">
+<meta property="og:image" content="https://minnsss.github.io/2018/07/18/Vue-JS入门/Vue.jpg">
+<meta property="og:updated_time" content="2018-07-18T13:50:19.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue.JS入门">
+<meta name="twitter:title" content="Vue.JS入门基础">
+<meta name="twitter:description" content="#Vue.JS特点  是一套构建用户界面的渐进式框架 只关注图层，采用自顶向上增量开发的设计 响应式数据绑定+组合视图组件 通过mvvm的数据绑定实现自动同步  Object.defineproperty() 核心思想：数据驱动；组件化  #与React的区别相同点    利用Virtual Dom实现快速渲染   轻量级响应式组件服务器端渲染   易于集成路由工具、打包工具以及状态管理工具">
+<meta name="twitter:image" content="https://minnsss.github.io/2018/07/18/Vue-JS入门/Vue.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://minnsss.github.io/2018/07/16/Vue-JS入门/"/>
+  <link rel="canonical" href="https://minnsss.github.io/2018/07/18/Vue-JS入门/"/>
 
 
 
@@ -133,7 +138,7 @@
   };
 </script>
 
-  <title>Vue.JS入门 | minnsss blog</title>
+  <title>Vue.JS入门基础 | minnsss blog</title>
   
 
 
@@ -306,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/07/16/Vue-JS入门/">
+    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/07/18/Vue-JS入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="minn">
@@ -323,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue.JS入门
+          <h1 class="post-title" itemprop="name headline">Vue.JS入门基础
               
             
           </h1>
@@ -348,24 +353,12 @@
                 
               
 
-              <time title="创建时间：2018-07-16 23:32:20" itemprop="dateCreated datePublished" datetime="2018-07-16T23:32:20+08:00">2018-07-16</time>
+              <time title="创建时间：2018-07-18 20:49:18 / 修改时间：21:50:19" itemprop="dateCreated datePublished" datetime="2018-07-18T20:49:18+08:00">2018-07-18</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-17 00:19:37" itemprop="dateModified" datetime="2018-07-17T00:19:37+08:00">2018-07-17</time>
               
             
           </span>
@@ -417,6 +410,44 @@
 
       
         <a id="more"></a>
+<p>#Vue.JS特点</p>
+<ul>
+<li>是一套构建用户界面的渐进式框架</li>
+<li>只关注图层，采用自顶向上增量开发的设计</li>
+<li>响应式数据绑定+组合视图组件</li>
+<li>通过mvvm的数据绑定实现自动同步  <code>Object.defineproperty()</code></li>
+<li>核心思想：数据驱动；组件化</li>
+</ul>
+<p>#与React的区别<br><strong>相同点</strong>  </p>
+<ul>
+<li>利用Virtual Dom实现快速渲染  </li>
+<li>轻量级响应式组件服务器端渲染  </li>
+<li>易于集成路由工具、打包工具以及状态管理工具  </li>
+<li>优秀的支持和社区  </li>
+</ul>
+<p><strong>不同点</strong><br><strong>Vue</strong>  </p>
+<ul>
+<li>模板和渲染函数的弹性选择  </li>
+<li>简单的语法以及项目创建  </li>
+<li>更快的渲染速度和更小的体积  </li>
+</ul>
+<p><strong>React</strong>  </p>
+<ul>
+<li>更适用于大型应用和更好的可测试性  </li>
+<li>同时适用于Web端和原生App  </li>
+<li>更大的生态圈带来的更多支持和工具<br>#Vue入门基础<br><img src="/2018/07/18/Vue-JS入门/Vue.jpg" alt="Vue入门基础"><br>#Vue.JS环境搭建<br>##node.js与npm的安装与环境搭建<br><a href="https://nodejs.org/en/" title="node.JS主页" target="_blank" rel="noopener">node.JS主页</a><br><a href="https://www.npmjs.com/" title="npm主页" target="_blank" rel="noopener">npm主页</a><br>##vue环境搭建与vue.cli使用</li>
+<li><p>项目路径npm安装/cnpm<br><code>npm install vue</code>  </p>
+</li>
+<li><p>官网拷贝引用<br><code>&lt;script src=&quot;https://unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;</code>  </p>
+</li>
+<li><p>vue.cli脚手架构建SPA应用<br>全局安装<code>npm install -g vue-cli</code><br>创建demo项目<code>vue init webpack-simple demo</code><br>安装依赖包<code>vue install</code><br>启动项目<code>npm run dev</code><br>webpack+vue创建简单项目<code>vue init webpack demo2</code>  </p>
+</li>
+<li><p>项目结构包括<br>readme.md项目说明描述文件<br>webpack.config配置<br>package.json基础包文件</p>
+</li>
+<li><p>Vue配置</p>
+</li>
+</ul>
+<p>#语法<br><a href="https://cn.vuejs.org/v2/guide/" title="Vue中文手册" target="_blank" rel="noopener">Vue中文手册</a></p>
 
       
     </div>
