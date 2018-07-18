@@ -108,27 +108,27 @@
 
 
 
-  <meta name="description" content="Vue入门的简单总结">
-<meta name="keywords" content="Vue.JS,基础">
+  <meta name="description" content="JavaScript实现由ECMAScript、DOM、BOM组成；ES6即为ECMASript 6(ECMAScript 2015)；这篇blog总结了目前接触到的ES6知识点。学习文档：阮一峰 ES6标准入门">
+<meta name="keywords" content="基础,ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue.JS入门基础">
-<meta property="og:url" content="https://minnsss.github.io/2018/07/18/Vue-JS入门/index.html">
+<meta property="og:title" content="ES6基础（完善中）">
+<meta property="og:url" content="https://minnsss.github.io/2018/07/18/ES6基础/index.html">
 <meta property="og:site_name" content="minnsss blog">
-<meta property="og:description" content="Vue入门的简单总结">
+<meta property="og:description" content="JavaScript实现由ECMAScript、DOM、BOM组成；ES6即为ECMASript 6(ECMAScript 2015)；这篇blog总结了目前接触到的ES6知识点。学习文档：阮一峰 ES6标准入门">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://minnsss.github.io/2018/07/18/Vue-JS入门/Vue.jpg">
-<meta property="og:updated_time" content="2018-07-18T14:02:15.877Z">
+<meta property="og:image" content="https://minnsss.github.io/2018/07/18/ES6基础/ES6.jpg">
+<meta property="og:updated_time" content="2018-07-18T15:10:33.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue.JS入门基础">
-<meta name="twitter:description" content="Vue入门的简单总结">
-<meta name="twitter:image" content="https://minnsss.github.io/2018/07/18/Vue-JS入门/Vue.jpg">
+<meta name="twitter:title" content="ES6基础（完善中）">
+<meta name="twitter:description" content="JavaScript实现由ECMAScript、DOM、BOM组成；ES6即为ECMASript 6(ECMAScript 2015)；这篇blog总结了目前接触到的ES6知识点。学习文档：阮一峰 ES6标准入门">
+<meta name="twitter:image" content="https://minnsss.github.io/2018/07/18/ES6基础/ES6.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://minnsss.github.io/2018/07/18/Vue-JS入门/"/>
+  <link rel="canonical" href="https://minnsss.github.io/2018/07/18/ES6基础/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Vue.JS入门基础 | minnsss blog</title>
+  <title>ES6基础（完善中） | minnsss blog</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/07/18/Vue-JS入门/">
+    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/07/18/ES6基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="minn">
@@ -328,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue.JS入门基础
+          <h1 class="post-title" itemprop="name headline">ES6基础（完善中）
               
             
           </h1>
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="创建时间：2018-07-18 20:49:18 / 修改时间：22:02:15" itemprop="dateCreated datePublished" datetime="2018-07-18T20:49:18+08:00">2018-07-18</time>
+              <time title="创建时间：2018-07-18 22:19:07 / 修改时间：23:10:33" itemprop="dateCreated datePublished" datetime="2018-07-18T22:19:07+08:00">2018-07-18</time>
             
 
             
@@ -409,45 +409,15 @@
       
 
       
-        <p>Vue入门的简单总结<br><a id="more"></a></p>
-<h1 id="Vue-JS特点"><a href="#Vue-JS特点" class="headerlink" title="Vue.JS特点"></a>Vue.JS特点</h1><ul>
-<li>是一套构建用户界面的渐进式框架</li>
-<li>只关注图层，采用自顶向上增量开发的设计</li>
-<li>响应式数据绑定+组合视图组件</li>
-<li>通过mvvm的数据绑定实现自动同步  <code>Object.defineproperty()</code></li>
-<li>核心思想：数据驱动；组件化</li>
-</ul>
-<h1 id="与React的区别"><a href="#与React的区别" class="headerlink" title="与React的区别"></a>与React的区别</h1><p><strong>相同点</strong>  </p>
-<ul>
-<li>利用Virtual Dom实现快速渲染  </li>
-<li>轻量级响应式组件服务器端渲染  </li>
-<li>易于集成路由工具、打包工具以及状态管理工具  </li>
-<li>优秀的支持和社区  </li>
-</ul>
-<p><strong>不同点</strong><br><strong>Vue</strong>  </p>
-<ul>
-<li>模板和渲染函数的弹性选择  </li>
-<li>简单的语法以及项目创建  </li>
-<li>更快的渲染速度和更小的体积  </li>
-</ul>
-<p><strong>React</strong>  </p>
-<ul>
-<li>更适用于大型应用和更好的可测试性  </li>
-<li>同时适用于Web端和原生App  </li>
-<li>更大的生态圈带来的更多支持和工具  <h1 id="Vue入门基础"><a href="#Vue入门基础" class="headerlink" title="Vue入门基础"></a>Vue入门基础</h1><img src="/2018/07/18/Vue-JS入门/Vue.jpg" alt="Vue入门基础"><h1 id="Vue-JS环境搭建"><a href="#Vue-JS环境搭建" class="headerlink" title="Vue.JS环境搭建"></a>Vue.JS环境搭建</h1><h2 id="node-js与npm的安装与环境搭建"><a href="#node-js与npm的安装与环境搭建" class="headerlink" title="node.js与npm的安装与环境搭建"></a>node.js与npm的安装与环境搭建</h2><a href="https://nodejs.org/en/" title="node.JS主页" target="_blank" rel="noopener">node.JS主页</a><br><a href="https://www.npmjs.com/" title="npm主页" target="_blank" rel="noopener">npm主页</a>  <h2 id="vue环境搭建与vue-cli使用"><a href="#vue环境搭建与vue-cli使用" class="headerlink" title="vue环境搭建与vue.cli使用"></a>vue环境搭建与vue.cli使用</h2></li>
-<li><p>项目路径npm安装/cnpm<br><code>npm install vue</code>  </p>
-</li>
-<li><p>官网拷贝引用<br><code>&lt;script src=&quot;https://unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;</code>  </p>
-</li>
-<li><p>vue.cli脚手架构建SPA应用<br>全局安装<code>npm install -g vue-cli</code><br>创建demo项目<code>vue init webpack-simple demo</code><br>安装依赖包<code>vue install</code><br>启动项目<code>npm run dev</code><br>webpack+vue创建简单项目<code>vue init webpack demo2</code>  </p>
-</li>
-<li><p>项目结构包括<br>readme.md项目说明描述文件<br>webpack.config配置<br>package.json基础包文件</p>
-</li>
-<li><p>Vue配置</p>
-</li>
-</ul>
-<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p><a href="https://cn.vuejs.org/v2/guide/" title="Vue中文手册" target="_blank" rel="noopener">Vue中文手册</a></p>
-
+        <p>JavaScript实现由ECMAScript、DOM、BOM组成；<br>ES6即为ECMASript 6(ECMAScript 2015)；<br>这篇blog总结了目前接触到的ES6知识点。<br>学习文档：<a href="http://es6.ruanyifeng.com/" title="阮一峰 ES6标准入门" target="_blank" rel="noopener">阮一峰 ES6标准入门</a><br><a id="more"></a><br><img src="/2018/07/18/ES6基础/ES6.jpg" alt="ES6基础总结"></p>
+<h1 id="let与const"><a href="#let与const" class="headerlink" title="let与const"></a>let与const</h1><h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><p><code>let</code>为ES6新增命令用于声明变量，用法类似与<code>var</code><br><strong>特点</strong><br>只在所在代码块内有效<br>不存在变量提升（<code>var</code>变量提升：变量可以在声明之前使用,值为<code>undifined</code>）<br>暂时性死区：只要块级作用域内存在<code>let</code>，那么他所声明的变量就绑定了这个区域，不再受外部的影响<br>不允许重复声明  </p>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p><strong>特点</strong><br><code>const</code>声明的变量，值不能改变<br>声明前必须初始化<br>只在块级作用域内使用或者其闭包中使用<br>不存在变量提升<br>不可重复声明<br>只是保证了变量名指向的地址不变，并不保证该地址的数据不变<br>对象本身冻结：<code>Object.freeze()</code></p>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES5只有全局作用域和函数作用域，没有块级作用域<br><strong>特点</strong><br>允许块级作用域的任意嵌套<br>内层作用域可以定义外层作用域的同名变量<br>块级作用域之中，函数声明语句的行为类似于<code>let</code>，在块级作用域之外不可引用<br><strong>ES6附录B中规定浏览器</strong><br>允许在块级作用域内声明函数。<br>函数声明类似于var，即会提升到全局作用域或函数作用域的头部。<br>同时，函数声明还会提升到所在的块级作用域的头部。  </p>
+<h1 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h1><h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p><strong>写法</strong> `string${value}`   </p>
+<h2 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h2><p><strong>写法</strong> <code>...变量名</code>  </p>
+<p><pre><code>funcion add(…values) {<br>    let sum = 0<br>    for (var val of values) {<br>        sum += val<br>    }<br>    return sum;<br>}<br>add(2, 4, 3) //10<br></code></pre></p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p><strong>写法</strong>  全局性严格模式`use strict`  </p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h2><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h1 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h1><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h3 id="布尔"><a href="#布尔" class="headerlink" title="布尔"></a>布尔</h3><h3 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h3><h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h1 id="import与export"><a href="#import与export" class="headerlink" title="import与export"></a>import与export</h1><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><h1 id="Promise对象-异步编程"><a href="#Promise对象-异步编程" class="headerlink" title="Promise对象/异步编程"></a>Promise对象/异步编程</h1><h1 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a>Generators</h1>
       
     </div>
 
@@ -467,9 +437,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue-JS/" rel="tag"># Vue.JS</a>
-          
             <a href="/tags/基础/" rel="tag"># 基础</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
         </div>
       
@@ -482,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/07/18/JavaScript入门/" rel="next" title="JavaScript入门">
+                <i class="fa fa-chevron-left"></i> JavaScript入门
               </a>
             
           </div>
@@ -491,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/18/JavaScript入门/" rel="prev" title="JavaScript入门">
-                JavaScript入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -638,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-JS特点"><span class="nav-number">1.</span> <span class="nav-text">Vue.JS特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#与React的区别"><span class="nav-number">2.</span> <span class="nav-text">与React的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue入门基础"><span class="nav-number">3.</span> <span class="nav-text">Vue入门基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-JS环境搭建"><span class="nav-number">4.</span> <span class="nav-text">Vue.JS环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js与npm的安装与环境搭建"><span class="nav-number">4.1.</span> <span class="nav-text">node.js与npm的安装与环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue环境搭建与vue-cli使用"><span class="nav-number">4.2.</span> <span class="nav-text">vue环境搭建与vue.cli使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">5.</span> <span class="nav-text">语法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#let与const"><span class="nav-number">1.</span> <span class="nav-text">let与const</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#let命令"><span class="nav-number">1.1.</span> <span class="nav-text">let命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const命令"><span class="nav-number">1.2.</span> <span class="nav-text">const命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.3.</span> <span class="nav-text">块级作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板语法"><span class="nav-number">2.</span> <span class="nav-text">模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板字符串"><span class="nav-number">2.1.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rest参数"><span class="nav-number">2.2.</span> <span class="nav-text">rest参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#严格模式"><span class="nav-number">2.3.</span> <span class="nav-text">严格模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数默认参数"><span class="nav-number">3.1.</span> <span class="nav-text">函数默认参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数"><span class="nav-number">3.2.</span> <span class="nav-text">箭头函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解构"><span class="nav-number">4.</span> <span class="nav-text">解构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">4.1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">4.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">4.2.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">4.2.2.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔"><span class="nav-number">4.2.3.</span> <span class="nav-text">布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-1"><span class="nav-number">4.2.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数"><span class="nav-number">4.2.5.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值"><span class="nav-number">4.2.6.</span> <span class="nav-text">数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">4.2.7.</span> <span class="nav-text">字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#import与export"><span class="nav-number">5.</span> <span class="nav-text">import与export</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#import"><span class="nav-number">5.1.</span> <span class="nav-text">import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#export"><span class="nav-number">5.2.</span> <span class="nav-text">export</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise对象-异步编程"><span class="nav-number">6.</span> <span class="nav-text">Promise对象/异步编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generators"><span class="nav-number">7.</span> <span class="nav-text">Generators</span></a></li></ol></div>
             
 
           </div>
