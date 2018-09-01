@@ -108,20 +108,24 @@
 
 
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="注：以react-musicplayer-simple工程为例 package.json{   &amp;quot;name&amp;quot;: &amp;quot;react-musicplayer-simple&amp;quot;,   &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,   &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,   &amp;quot;main&amp;">
+<meta property="og:type" content="website">
 <meta property="og:title" content="minnsss blog">
-<meta property="og:url" content="https://minnsss.github.io/categories/前端/index.html">
+<meta property="og:url" content="https://minnsss.github.io/Webpack配置总结（持续更新中）.html">
 <meta property="og:site_name" content="minnsss blog">
+<meta property="og:description" content="注：以react-musicplayer-simple工程为例 package.json{   &amp;quot;name&amp;quot;: &amp;quot;react-musicplayer-simple&amp;quot;,   &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,   &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,   &amp;quot;main&amp;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-01T14:49:30.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="minnsss blog">
+<meta name="twitter:description" content="注：以react-musicplayer-simple工程为例 package.json{   &amp;quot;name&amp;quot;: &amp;quot;react-musicplayer-simple&amp;quot;,   &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,   &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,   &amp;quot;main&amp;">
 
 
 
 
 
 
-  <link rel="canonical" href="https://minnsss.github.io/categories/前端/"/>
+  <link rel="canonical" href="https://minnsss.github.io/Webpack配置总结（持续更新中）.html"/>
 
 
 
@@ -131,7 +135,7 @@
   };
 </script>
 
-  <title>分类: 前端 | minnsss blog</title>
+  <title> | minnsss blog</title>
   
 
 
@@ -178,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,7 +239,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
   </li>
@@ -310,199 +314,191 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline"></h1>
+
+<div class="post-meta">
   
   
-  
-  <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>前端<small>分类</small>
-        </h1>
-      </div>
+
+
+</div>
+
+</header>
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/01/DOM事件/" itemprop="url">
-              
-                <span itemprop="name">DOM事件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T15:19:07+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/01/CSS盒模型/" itemprop="url">
-              
-                <span itemprop="name">CSS盒模型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T14:19:07+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
       
+      <div class="post-body">
         
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/09/01/页面布局/" itemprop="url">
-              
-                <span itemprop="name">页面布局</span>
-              
-            </a>
-        
-      </h2>
+          <p>注：以<code>react-musicplayer-simple</code>工程为例</p>
+<h1 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h1><pre><code>{
+  &quot;name&quot;: &quot;react-musicplayer-simple&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;build&quot;: &quot;webpack --config build/webpack.config.js&quot;,
+    &quot;dev&quot;: &quot;cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.js&quot;
+  },
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;babel-core&quot;: &quot;^6.26.3&quot;,
+    &quot;babel-loader&quot;: &quot;^7.1.5&quot;,
+    &quot;babel-preset-es2015&quot;: &quot;^6.24.1&quot;,
+    &quot;babel-preset-es2015-loose&quot;: &quot;^8.0.0&quot;,
+    &quot;babel-preset-react&quot;: &quot;^6.24.1&quot;,
+    &quot;cross-env&quot;: &quot;^5.2.0&quot;,
+    &quot;css-loader&quot;: &quot;^1.0.0&quot;,
+    &quot;file-loader&quot;: &quot;^1.1.11&quot;,
+    &quot;html-webpack-plugin&quot;: &quot;^3.2.0&quot;,
+    &quot;jplayer&quot;: &quot;^2.9.2&quot;,
+    &quot;jquery&quot;: &quot;^3.3.1&quot;,
+    &quot;json-loader&quot;: &quot;^0.5.7&quot;,
+    &quot;less&quot;: &quot;^3.8.1&quot;,
+    &quot;less-loader&quot;: &quot;^4.1.0&quot;,
+    &quot;react-hot-loader&quot;: &quot;^4.0.0&quot;,
+    &quot;style-loader&quot;: &quot;^0.22.1&quot;,
+    &quot;url-loader&quot;: &quot;^1.0.1&quot;,
+    &quot;webpack&quot;: &quot;^4.16.5&quot;,
+    &quot;webpack-cli&quot;: &quot;^3.1.0&quot;,
+    &quot;webpack-dev-server&quot;: &quot;^3.1.5&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;pubsub-js&quot;: &quot;^1.6.0&quot;,
+    &quot;react&quot;: &quot;^16.4.2&quot;,
+    &quot;react-dom&quot;: &quot;^16.4.2&quot;,
+    &quot;react-router&quot;: &quot;^4.3.1&quot;,
+    &quot;react-router-dom&quot;: &quot;^4.3.1&quot;
+  }
+}
+</code></pre><h1 id="Webpack-config-js"><a href="#Webpack-config-js" class="headerlink" title="Webpack.config.js"></a>Webpack.config.js</h1><pre><code>const path = require(&apos;path&apos;)
+const HTMLPlugin = require(&apos;html-webpack-plugin&apos;)
+const isDev = process.env.NODE_ENV === &apos;development&apos;
+const webpack = require(&apos;webpack&apos;)
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T12:19:07+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
+const config = {
+    entry: {
+        app: path.join(__dirname, &apos;../client/index.js&apos;)
+    },
+    output: {
+        filename: &quot;bundle.js&quot;,
+        path: path.join(__dirname, &apos;../dist&apos;),
+    },
+    module: {
+        rules: [
+            {
+                test: /.jsx$/,
+                loader: &apos;babel-loader&apos;,
+            },
+            {
+                test: /.js$/,
+                loader: &apos;babel-loader&apos;,
+                exclude: [
+                    path.join(__dirname, &apos;../node_modules&apos;)
+                ]
+            },
+            {
+                test: /.less$/,
+                loader: [&quot;style-loader&quot;,&quot;css-loader&quot;,&quot;less-loader&quot;]
+            },
+            {
+                test: /.css$/,
+                loader: [&quot;style-loader&quot;,&quot;css-loader&quot;]
+            },
+            {
+                test: /.(png|jpg)$/,
+                loader: &quot;url-loader&quot;,
+                options: {
+                    limit: 10000,
+                    name: &apos;static/media/[name].[hash:8].[ext]&apos;
+                }
+            },
+            {
+                test: /\.(mp3)(\?.*)?$/,
+                loader: &apos;url-loader&apos;,
+                options: {
+                    name:&apos;static/media/[name].[ext]&apos;,
+                    limit:10
+                }
+            }
+        ]
+    },
+    plugins: [
+        new HTMLPlugin({
+            template: path.join(__dirname, &apos;../client/index.tp.html&apos;),
+            inject:&apos;body&apos;,
+            filename:&apos;./index.html&apos;
+        })
+    ]
+}
+
+
+//localhost:8888/filename
+if (isDev) {
+    config.entry = {
+        app: [
+            &apos;react-hot-loader/patch&apos;,
+            path.join(__dirname, &apos;../client/index.js&apos;)
+        ]
+    }
+    config.devServer = {
+        host: &apos;localhost&apos;,
+        port: &apos;8888&apos;,
+        contentBase: path.join(__dirname, &apos;../dist&apos;),
+        hot: true,
+        overlay: {
+            errors: true
+        },
+        publicPath: &apos;/public&apos;,
+        historyApiFallback: {
+            index: &apos;/public/index.html&apos;
+        }
+    }
+    config.plugins.push(new webpack.HotModuleReplacementPlugin())
+}
+
+module.exports = config
+</code></pre><h1 id="babelrc"><a href="#babelrc" class="headerlink" title=".babelrc"></a>.babelrc</h1><pre><code>{
+  &quot;presets&quot;: [
+    [&quot;es2015&quot;, { &quot;loose&quot;: true}],
+    &quot;react&quot;
+  ],
+  &quot;plugins&quot;: [&quot;react-hot-loader/babel&quot;]
+}
+</code></pre>
+        
       </div>
-
-    </header>
-  </article>
-
-
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/20/Webpack配置总结（持续更新中）/" itemprop="url">
-              
-                <span itemprop="name">Webpack配置总结（持续更新中）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-20T22:19:07+08:00"
-              content="2018-08-20" >
-          08-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/18/ES6基础/" itemprop="url">
-              
-                <span itemprop="name">ES6基础（完善中）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-18T22:19:07+08:00"
-              content="2018-07-18" >
-          07-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/18/Vue-JS入门/" itemprop="url">
-              
-                <span itemprop="name">Vue.JS入门基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-18T20:49:18+08:00"
-              content="2018-07-18" >
-          07-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
       
     </div>
+    
 
+
+
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -523,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -605,6 +610,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#package-json"><span class="nav-number">1.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Webpack-config-js"><span class="nav-number">2.</span> <span class="nav-text">Webpack.config.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#babelrc"><span class="nav-number">3.</span> <span class="nav-text">.babelrc</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -739,6 +760,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
