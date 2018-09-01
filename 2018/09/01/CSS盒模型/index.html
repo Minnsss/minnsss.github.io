@@ -108,27 +108,25 @@
 
 
 
-  <meta name="description" content="JavaScript实现由ECMAScript、DOM、BOM组成；ES6即为ECMASript 6(ECMAScript 2015)；这篇blog总结了目前接触到的ES6知识点。学习文档：阮一峰 ES6标准入门">
-<meta name="keywords" content="基础,ES6">
+  <meta name="description" content="CSS盒模型题目:对CSS盒模型的认识分析基本概念标准模型+IE模型 区别标准模型（浏览器默认）：width不计算padding和border IE模型：width计算padding和border CSS如何设置这两种模型标准模型： box-sizing: content-box; IE模型： box-sizing: border-box; JS如何设置获取盒模型对应的宽和高只能获取内联高： do">
+<meta name="keywords" content="CSS,基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6基础（完善中）">
-<meta property="og:url" content="https://minnsss.github.io/2018/07/18/ES6基础/index.html">
+<meta property="og:title" content="CSS盒模型">
+<meta property="og:url" content="https://minnsss.github.io/2018/09/01/CSS盒模型/index.html">
 <meta property="og:site_name" content="minnsss blog">
-<meta property="og:description" content="JavaScript实现由ECMAScript、DOM、BOM组成；ES6即为ECMASript 6(ECMAScript 2015)；这篇blog总结了目前接触到的ES6知识点。学习文档：阮一峰 ES6标准入门">
+<meta property="og:description" content="CSS盒模型题目:对CSS盒模型的认识分析基本概念标准模型+IE模型 区别标准模型（浏览器默认）：width不计算padding和border IE模型：width计算padding和border CSS如何设置这两种模型标准模型： box-sizing: content-box; IE模型： box-sizing: border-box; JS如何设置获取盒模型对应的宽和高只能获取内联高： do">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://minnsss.github.io/2018/07/18/ES6基础/ES6.jpg">
-<meta property="og:updated_time" content="2018-07-18T15:16:05.445Z">
+<meta property="og:updated_time" content="2018-09-01T14:10:34.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6基础（完善中）">
-<meta name="twitter:description" content="JavaScript实现由ECMAScript、DOM、BOM组成；ES6即为ECMASript 6(ECMAScript 2015)；这篇blog总结了目前接触到的ES6知识点。学习文档：阮一峰 ES6标准入门">
-<meta name="twitter:image" content="https://minnsss.github.io/2018/07/18/ES6基础/ES6.jpg">
+<meta name="twitter:title" content="CSS盒模型">
+<meta name="twitter:description" content="CSS盒模型题目:对CSS盒模型的认识分析基本概念标准模型+IE模型 区别标准模型（浏览器默认）：width不计算padding和border IE模型：width计算padding和border CSS如何设置这两种模型标准模型： box-sizing: content-box; IE模型： box-sizing: border-box; JS如何设置获取盒模型对应的宽和高只能获取内联高： do">
 
 
 
 
 
 
-  <link rel="canonical" href="https://minnsss.github.io/2018/07/18/ES6基础/"/>
+  <link rel="canonical" href="https://minnsss.github.io/2018/09/01/CSS盒模型/"/>
 
 
 
@@ -138,7 +136,7 @@
   };
 </script>
 
-  <title>ES6基础（完善中） | minnsss blog</title>
+  <title>CSS盒模型 | minnsss blog</title>
   
 
 
@@ -311,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/07/18/ES6基础/">
+    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/09/01/CSS盒模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="minn">
@@ -328,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6基础（完善中）
+          <h1 class="post-title" itemprop="name headline">CSS盒模型
               
             
           </h1>
@@ -353,7 +351,7 @@
                 
               
 
-              <time title="创建时间：2018-07-18 22:19:07 / 修改时间：23:16:05" itemprop="dateCreated datePublished" datetime="2018-07-18T22:19:07+08:00">2018-07-18</time>
+              <time title="创建时间：2018-09-01 14:19:07 / 修改时间：22:10:34" itemprop="dateCreated datePublished" datetime="2018-09-01T14:19:07+08:00">2018-09-01</time>
             
 
             
@@ -409,15 +407,122 @@
       
 
       
-        <p>JavaScript实现由ECMAScript、DOM、BOM组成；<br>ES6即为ECMASript 6(ECMAScript 2015)；<br>这篇blog总结了目前接触到的ES6知识点。<br>学习文档：<a href="http://es6.ruanyifeng.com/" title="阮一峰 ES6标准入门" target="_blank" rel="noopener">阮一峰 ES6标准入门</a><br><a id="more"></a><br><img src="/2018/07/18/ES6基础/ES6.jpg" alt="ES6基础总结"></p>
-<h1 id="let与const"><a href="#let与const" class="headerlink" title="let与const"></a>let与const</h1><h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><p><code>let</code>为ES6新增命令用于声明变量，用法类似与<code>var</code><br><strong>特点</strong><br>只在所在代码块内有效<br>不存在变量提升（<code>var</code>变量提升：变量可以在声明之前使用,值为<code>undefined</code>）<br>暂时性死区：只要块级作用域内存在<code>let</code>，那么他所声明的变量就绑定了这个区域，不再受外部的影响<br>不允许重复声明  </p>
-<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p><strong>特点</strong><br><code>const</code>声明的变量，值不能改变<br>声明前必须初始化<br>只在块级作用域内使用或者其闭包中使用<br>不存在变量提升<br>不可重复声明<br>只是保证了变量名指向的地址不变，并不保证该地址的数据不变<br>对象本身冻结：<code>Object.freeze()</code></p>
-<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p>ES5只有全局作用域和函数作用域，没有块级作用域<br><strong>特点</strong><br>允许块级作用域的任意嵌套<br>内层作用域可以定义外层作用域的同名变量<br>块级作用域之中，函数声明语句的行为类似于<code>let</code>，在块级作用域之外不可引用<br><strong>ES6附录B中规定浏览器</strong><br>允许在块级作用域内声明函数。<br>函数声明类似于var，即会提升到全局作用域或函数作用域的头部。<br>同时，函数声明还会提升到所在的块级作用域的头部。  </p>
-<h1 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h1><h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><p><strong>写法</strong> `string${value}`   </p>
-<h2 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h2><p><strong>写法</strong> <code>...变量名</code>  </p>
-<p><pre><code>funcion add(…values) {<br>    let sum = 0<br>    for (var val of values) {<br>        sum += val<br>    }<br>    return sum;<br>}<br>add(2, 4, 3) //10<br></code></pre></p>
-<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p><strong>写法</strong>  全局性严格模式`use strict`  </p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h2><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h1 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h1><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h3 id="布尔"><a href="#布尔" class="headerlink" title="布尔"></a>布尔</h3><h3 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h3><h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h1 id="import与export"><a href="#import与export" class="headerlink" title="import与export"></a>import与export</h1><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><h1 id="Promise对象-异步编程"><a href="#Promise对象-异步编程" class="headerlink" title="Promise对象/异步编程"></a>Promise对象/异步编程</h1><h1 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a>Generators</h1>
+        <h2 id="CSS盒模型"><a href="#CSS盒模型" class="headerlink" title="CSS盒模型"></a>CSS盒模型</h2><h3 id="题目-对CSS盒模型的认识"><a href="#题目-对CSS盒模型的认识" class="headerlink" title="题目:对CSS盒模型的认识"></a>题目:对CSS盒模型的认识</h3><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>标准模型+IE模型</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>标准模型（浏览器默认）：width不计算padding和border</p>
+<p>IE模型：width计算padding和border</p>
+<h4 id="CSS如何设置这两种模型"><a href="#CSS如何设置这两种模型" class="headerlink" title="CSS如何设置这两种模型"></a>CSS如何设置这两种模型</h4><p>标准模型： <code>box-sizing: content-box;</code></p>
+<p>IE模型： <code>box-sizing: border-box;</code></p>
+<h4 id="JS如何设置获取盒模型对应的宽和高"><a href="#JS如何设置获取盒模型对应的宽和高" class="headerlink" title="JS如何设置获取盒模型对应的宽和高"></a>JS如何设置获取盒模型对应的宽和高</h4><p>只能获取内联高： <code>dom.style.width/height</code></p>
+<p>浏览器渲染之后的取值，仅IE支持: <code>dom.currentStyle.height</code></p>
+<p>浏览器渲染之后的取值，兼容性较好： <code>window.getComputedStyle(dom).width/height</code></p>
+<p>根据窗口视图获取宽高： <code>dom.getBoundingClientRect().width/height/left/top</code></p>
+<h4 id="实例题（根据盒模型解释边距重叠）"><a href="#实例题（根据盒模型解释边距重叠）" class="headerlink" title="实例题（根据盒模型解释边距重叠）"></a>实例题（根据盒模型解释边距重叠）</h4><p>边距重叠的三种情况：父子；兄弟；空元素（兄弟与空元素一样，取最大值）</p>
+<h4 id="BFC（边距重叠解决方案）"><a href="#BFC（边距重叠解决方案）" class="headerlink" title="BFC（边距重叠解决方案）"></a>BFC（边距重叠解决方案）</h4><h5 id="BFC基本概念"><a href="#BFC基本概念" class="headerlink" title="BFC基本概念"></a>BFC基本概念</h5><p>BFC：块级格式化上下文</p>
+<p>IFC：内联元素格式化上下文</p>
+<h5 id="BFC原理-渲染规则"><a href="#BFC原理-渲染规则" class="headerlink" title="BFC原理/渲染规则"></a>BFC原理/渲染规则</h5><p>1.BFC的垂直方向发生重叠</p>
+<p>2.BFC的区域不会与浮动元素发生边距重叠</p>
+<p>3.BFC在页面上是独立的容器，外/里不会互相影响</p>
+<p>4.浮动元素参与BFC计算高度</p>
+<h5 id="创建BFC"><a href="#创建BFC" class="headerlink" title="创建BFC"></a>创建BFC</h5><p>1.float值不为none</p>
+<p>2.overflow的值不为visible</p>
+<p>3.display的值为table-cell,table-caption,inline-block中的任何一个</p>
+<p>4.position的值不为relative和static（position的默认值）</p>
+<h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h5><p>解决垂直方向的边距重叠</p>
+<p>清除浮动</p>
+<p>不与浮动元素重叠</p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p><code>box.html</code></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+   &lt;meta charset=&quot;UTF-8&quot;&gt;
+   &lt;title&gt;CSS盒模型&lt;/title&gt;
+   &lt;style media=&quot;screen&quot;&gt;
+   html *{
+           padding: 0;
+      margin: 0;
+   }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!--overflow影响height--&gt;
+&lt;section id=&quot;sec&quot;&gt;
+    &lt;style media=&quot;screen&quot;&gt;
+        #sec{
+            background: #f00;
+            /*overflow影响height*/        
+            /*overflow: hidden;*/
+        }
+        .child{
+            height:100px;
+            margin-top: 10px;
+            background: yellow;
+        }
+    &lt;/style&gt;
+    &lt;article class=&quot;child&quot;&gt;&lt;/article&gt;
+&lt;/section&gt;
+
+
+&lt;!--BFC垂直方向边距重叠--&gt;
+&lt;section id=&quot;margin&quot;&gt;
+    &lt;style&gt;
+        #margin{
+            background: pink;
+            overflow: hidden;
+        }
+        #margin&gt;p{
+            margin: 5px auto 25px;
+            background: red;
+        }        
+    &lt;/style&gt;
+    &lt;p&gt;1&lt;/p&gt;
+    &lt;div style=&quot;overflow:hidden&quot;&gt;
+        &lt;p&gt;2&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;3&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;!-- BFC不与float重叠 --&gt;
+&lt;section id=&quot;layout&quot;&gt;
+    &lt;style media=&quot;screen&quot;&gt;
+        #layout{
+            background: red;
+        }
+        #layout .left{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        #layout .right{
+            height: 110px;
+            background: #ccc;
+            overflow: auto;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- BFC子元素即使是float，也会参与高度计算/清除浮动 --&gt;
+&lt;section id=&quot;float&quot;&gt;
+    &lt;style media=&quot;screen&quot;&gt;
+        #float{
+            background: red;
+            /*overflow: auto;*/
+            float: left;
+        }
+        #float .float{
+            float: left;
+            font-size: 30px;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;float&quot;&gt;我是浮动元素&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
       
     </div>
 
@@ -437,9 +542,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/基础/" rel="tag"># 基础</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
+            <a href="/tags/基础/" rel="tag"># 基础</a>
           
         </div>
       
@@ -452,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/18/JavaScript入门/" rel="next" title="JavaScript入门">
-                <i class="fa fa-chevron-left"></i> JavaScript入门
+              <a href="/2018/09/01/页面布局/" rel="next" title="页面布局">
+                <i class="fa fa-chevron-left"></i> 页面布局
               </a>
             
           </div>
@@ -462,8 +567,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/01/页面布局/" rel="prev" title="页面布局">
-                页面布局 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/01/DOM事件/" rel="prev" title="DOM事件">
+                DOM事件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -614,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#let与const"><span class="nav-number">1.</span> <span class="nav-text">let与const</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#let命令"><span class="nav-number">1.1.</span> <span class="nav-text">let命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const命令"><span class="nav-number">1.2.</span> <span class="nav-text">const命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.3.</span> <span class="nav-text">块级作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板语法"><span class="nav-number">2.</span> <span class="nav-text">模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板字符串"><span class="nav-number">2.1.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rest参数"><span class="nav-number">2.2.</span> <span class="nav-text">rest参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#严格模式"><span class="nav-number">2.3.</span> <span class="nav-text">严格模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数默认参数"><span class="nav-number">3.1.</span> <span class="nav-text">函数默认参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数"><span class="nav-number">3.2.</span> <span class="nav-text">箭头函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解构"><span class="nav-number">4.</span> <span class="nav-text">解构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">4.1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">4.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">4.2.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">4.2.2.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔"><span class="nav-number">4.2.3.</span> <span class="nav-text">布尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-1"><span class="nav-number">4.2.4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数"><span class="nav-number">4.2.5.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值"><span class="nav-number">4.2.6.</span> <span class="nav-text">数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">4.2.7.</span> <span class="nav-text">字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#import与export"><span class="nav-number">5.</span> <span class="nav-text">import与export</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#import"><span class="nav-number">5.1.</span> <span class="nav-text">import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#export"><span class="nav-number">5.2.</span> <span class="nav-text">export</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise对象-异步编程"><span class="nav-number">6.</span> <span class="nav-text">Promise对象/异步编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generators"><span class="nav-number">7.</span> <span class="nav-text">Generators</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS盒模型"><span class="nav-number">1.</span> <span class="nav-text">CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目-对CSS盒模型的认识"><span class="nav-number">1.1.</span> <span class="nav-text">题目:对CSS盒模型的认识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">1.2.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">1.2.2.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS如何设置这两种模型"><span class="nav-number">1.2.3.</span> <span class="nav-text">CSS如何设置这两种模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS如何设置获取盒模型对应的宽和高"><span class="nav-number">1.2.4.</span> <span class="nav-text">JS如何设置获取盒模型对应的宽和高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例题（根据盒模型解释边距重叠）"><span class="nav-number">1.2.5.</span> <span class="nav-text">实例题（根据盒模型解释边距重叠）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BFC（边距重叠解决方案）"><span class="nav-number">1.2.6.</span> <span class="nav-text">BFC（边距重叠解决方案）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BFC基本概念"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">BFC基本概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BFC原理-渲染规则"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">BFC原理/渲染规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建BFC"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">创建BFC</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景"><span class="nav-number">1.2.6.4.</span> <span class="nav-text">应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码"><span class="nav-number">1.3.</span> <span class="nav-text">源码</span></a></li></ol></li></ol></div>
             
 
           </div>
