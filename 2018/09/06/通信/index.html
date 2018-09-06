@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="DOM事件类基本概念DOM事件的级别DOM0: element.onclick=function(){} DOM2: element.addEventListener(&amp;#39;click&amp;#39;, function(){}, false) DOM3: element.addEventListener(&amp;#39;keyup&amp;#39;, function(){}, false) 没有DOM1的原因">
-<meta name="keywords" content="基础,JavaScript">
+  <meta name="description" content="通信类什么是同源策略及限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互 这是一个用于隔离潜在恶意文件的关键的安全机制 源协议 域名 端口 (默认80) 限制Cookie LocalStorage IndexDB无法读取 DOM无法获得 Ajax请求不能发送/Ajax仅适用同源 前后端如何通信Ajax同源下的通信方式 WebSocket不受同源策略的限制 CORS既支持同源，也支持跨域">
+<meta name="keywords" content="基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM事件">
-<meta property="og:url" content="https://minnsss.github.io/2018/09/01/DOM事件/index.html">
+<meta property="og:title" content="通信">
+<meta property="og:url" content="https://minnsss.github.io/2018/09/06/通信/index.html">
 <meta property="og:site_name" content="minnsss blog">
-<meta property="og:description" content="DOM事件类基本概念DOM事件的级别DOM0: element.onclick=function(){} DOM2: element.addEventListener(&amp;#39;click&amp;#39;, function(){}, false) DOM3: element.addEventListener(&amp;#39;keyup&amp;#39;, function(){}, false) 没有DOM1的原因">
+<meta property="og:description" content="通信类什么是同源策略及限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互 这是一个用于隔离潜在恶意文件的关键的安全机制 源协议 域名 端口 (默认80) 限制Cookie LocalStorage IndexDB无法读取 DOM无法获得 Ajax请求不能发送/Ajax仅适用同源 前后端如何通信Ajax同源下的通信方式 WebSocket不受同源策略的限制 CORS既支持同源，也支持跨域">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-01T14:11:44.516Z">
+<meta property="og:updated_time" content="2018-09-06T15:28:01.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM事件">
-<meta name="twitter:description" content="DOM事件类基本概念DOM事件的级别DOM0: element.onclick=function(){} DOM2: element.addEventListener(&amp;#39;click&amp;#39;, function(){}, false) DOM3: element.addEventListener(&amp;#39;keyup&amp;#39;, function(){}, false) 没有DOM1的原因">
+<meta name="twitter:title" content="通信">
+<meta name="twitter:description" content="通信类什么是同源策略及限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互 这是一个用于隔离潜在恶意文件的关键的安全机制 源协议 域名 端口 (默认80) 限制Cookie LocalStorage IndexDB无法读取 DOM无法获得 Ajax请求不能发送/Ajax仅适用同源 前后端如何通信Ajax同源下的通信方式 WebSocket不受同源策略的限制 CORS既支持同源，也支持跨域">
 
 
 
 
 
 
-  <link rel="canonical" href="https://minnsss.github.io/2018/09/01/DOM事件/"/>
+  <link rel="canonical" href="https://minnsss.github.io/2018/09/06/通信/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>DOM事件 | minnsss blog</title>
+  <title>通信 | minnsss blog</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/09/01/DOM事件/">
+    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/09/06/通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="minn">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DOM事件
+          <h1 class="post-title" itemprop="name headline">通信
               
             
           </h1>
@@ -351,7 +351,7 @@
                 
               
 
-              <time title="创建时间：2018-09-01 15:19:07 / 修改时间：22:11:44" itemprop="dateCreated datePublished" datetime="2018-09-01T15:19:07+08:00">2018-09-01</time>
+              <time title="创建时间：2018-09-06 22:41:40 / 修改时间：23:28:01" itemprop="dateCreated datePublished" datetime="2018-09-06T22:41:40+08:00">2018-09-06</time>
             
 
             
@@ -407,97 +407,35 @@
       
 
       
-        <h2 id="DOM事件类"><a href="#DOM事件类" class="headerlink" title="DOM事件类"></a>DOM事件类</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="DOM事件的级别"><a href="#DOM事件的级别" class="headerlink" title="DOM事件的级别"></a>DOM事件的级别</h4><p>DOM0: <code>element.onclick=function(){}</code></p>
-<p>DOM2: <code>element.addEventListener(&#39;click&#39;, function(){}, false)</code></p>
-<p>DOM3: <code>element.addEventListener(&#39;keyup&#39;, function(){}, false)</code></p>
-<p>没有DOM1的原因：因为DOM1制定标准的时候没有设计跟事件相关的内容，但是不代表DOM1不存在</p>
-<p>true：捕获时触发</p>
-<p>false：冒泡时触发</p>
-<h4 id="DOM事件模型"><a href="#DOM事件模型" class="headerlink" title="DOM事件模型"></a>DOM事件模型</h4><p>捕获：从上至下</p>
-<p>冒泡：从下至上</p>
-<h4 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h4><p>捕获 -&gt; 目标阶段 -&gt; 冒泡</p>
-<h4 id="描述DOM事件流捕获的具体流程"><a href="#描述DOM事件流捕获的具体流程" class="headerlink" title="描述DOM事件流捕获的具体流程"></a>描述DOM事件流捕获的具体流程</h4><p>捕获： window -&gt; document -&gt; html -&gt; body -&gt; … -&gt; 目标元素</p>
-<p>冒泡： 反序</p>
-<p>JS获取html： <code>document.documentElement</code></p>
-<p>JS获取body： <code>document.body</code></p>
-<h4 id="Event对象的常见应用"><a href="#Event对象的常见应用" class="headerlink" title="Event对象的常见应用"></a>Event对象的常见应用</h4><p>阻止默认事件： <code>event.preventDefault()</code></p>
-<p>阻止冒泡事件： <code>event.stopProgagation()</code></p>
-<p>按钮绑定2个click事件A、B,A点击后不触发B，在A的响应函数添加即可阻止B的执行： <code>event.stopImmediatePropagation()</code></p>
-<p>当前绑定的事件，父级元素： <code>event.currentTarget</code></p>
-<p>当前被点击的元素，IE早起没有： <code>event.target</code></p>
-<h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h4><pre><code>var eve = new Event(&apos;custome&apos;);
-ev.addEventListener(&apos;custome&apos;, function(){
-    console.log(&apos;custome&apos;)
-});
-ev.dispatchEvent(eve);
-</code></pre><p>Event：只能指定事件名，不能添加数据；</p>
-<p>CustomEvent：除了可以指定事件名，还可后面跟object来做指定自定义参数</p>
-<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p><code>event.html</code></p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;title&gt;Event&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;ev&quot;&gt;
-    &lt;style&gt;
-        #ev{
-            width: 300px;
-            height: 100px;
-            background: red;
-            color: #fff;
-            text-align: center;
-            line-height: 100px;
-        }
-    &lt;/style&gt;
-    目标元素
-&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    var ev=document.getElementById(&apos;ev&apos;);
+        <h1 id="通信类"><a href="#通信类" class="headerlink" title="通信类"></a>通信类</h1><h2 id="什么是同源策略及限制"><a href="#什么是同源策略及限制" class="headerlink" title="什么是同源策略及限制"></a>什么是同源策略及限制</h2><p>从一个源加载的文档或脚本如何与来自另一个源的资源进行交互</p>
+<p>这是一个用于隔离潜在恶意文件的关键的安全机制</p>
+<h3 id="源"><a href="#源" class="headerlink" title="源"></a>源</h3><p>协议</p>
+<p>域名</p>
+<p>端口 (默认80)</p>
+<h3 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h3><p>Cookie LocalStorage IndexDB无法读取</p>
+<p>DOM无法获得</p>
+<p>Ajax请求不能发送/Ajax仅适用同源</p>
+<h2 id="前后端如何通信"><a href="#前后端如何通信" class="headerlink" title="前后端如何通信"></a>前后端如何通信</h2><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><p>同源下的通信方式</p>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>不受同源策略的限制</p>
+<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>既支持同源，也支持跨域</p>
+<h2 id="如何创建Ajax"><a href="#如何创建Ajax" class="headerlink" title="如何创建Ajax"></a>如何创建Ajax</h2><h3 id="XMLHttpRequest对象的工作流程"><a href="#XMLHttpRequest对象的工作流程" class="headerlink" title="XMLHttpRequest对象的工作流程"></a>XMLHttpRequest对象的工作流程</h3><h3 id="兼容性处理"><a href="#兼容性处理" class="headerlink" title="兼容性处理"></a>兼容性处理</h3><h3 id="事件的触发条件"><a href="#事件的触发条件" class="headerlink" title="事件的触发条件"></a>事件的触发条件</h3><h3 id="事件的触发顺序"><a href="#事件的触发顺序" class="headerlink" title="事件的触发顺序"></a>事件的触发顺序</h3><h2 id="跨域通信的几种方式"><a href="#跨域通信的几种方式" class="headerlink" title="跨域通信的几种方式"></a>跨域通信的几种方式</h2><h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>使用script标签的异步加载实现。</p>
+<p>即script标签src属性中的链接可以访问跨域的js脚本，利用这个特性，服务端不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域</p>
+<p>前后端通信</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><h3 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h3><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>hash的改变不会刷新页面</p>
+<p>seach刷新页面</p>
+<p>浏览器跨标签通信，可以跨域但不通过服务器</p>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><h4 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h4><p>H5新增</p>
+<p>浏览器跨标签通信，可以跨域但不通过服务器</p>
+<p>同源策略目标是限制跨域通信，在实际业务中又需要跨域通信</p>
+<h4 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h4><h3 id="WebSocket-1"><a href="#WebSocket-1" class="headerlink" title="WebSocket"></a>WebSocket</h3><h4 id="原理-3"><a href="#原理-3" class="headerlink" title="原理"></a>原理</h4><p>前后端通信</p>
+<h4 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h4><h3 id="CORS-1"><a href="#CORS-1" class="headerlink" title="CORS"></a>CORS</h3><h4 id="原理-4"><a href="#原理-4" class="headerlink" title="原理"></a>原理</h4><p>可理解为支持跨域通信的Ajax，是一个新的通信标准</p>
+<p>浏览器会拦截Ajax请求，感觉如果是跨域的，会在http头中加一个original允许跨域通信</p>
+<p>前后端通信</p>
+<h4 id="实现-4"><a href="#实现-4" class="headerlink" title="实现"></a>实现</h4><p>fetch</p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>/source/mvvm/</p>
+<p><code>jsonp.js</code></p>
+<p><code>ajax.html</code></p>
 
-    //响应顺序与定义顺序无关
-    ev.addEventListener(&apos;click&apos;, function() {
-        /* Act on the event */
-        console.log(&apos;ev capture&apos;);
-    }, true);
-
-    window.addEventListener(&apos;click&apos;, function() {
-        /* Act on the event */
-        console.log(&apos;window capture&apos;);
-    }, true);
-
-    document.addEventListener(&apos;click&apos;, function() {
-        /* Act on the event */
-        console.log(&apos;document capture&apos;);
-    }, true);
-
-    document.documentElement.addEventListener(&apos;click&apos;, function() {
-        /* Act on the event */
-        console.log(&apos;html cature&apos;);
-    }, true);
-
-    document.body.addEventListener(&apos;click&apos;,function() {
-        /* Act on the event */
-        console.log(&apos;body cature&apos;);
-    }, true);
-
-    //自定义事件
-    var eve = new Event(&apos;test&apos;);
-    ev.addEventListener(&apos;test&apos;, function() {
-        console.log(&apos;test dispatch&apos;);
-    })
-
-    //ev.dispatchEvent(eve);
-
-    setTimeout(function() {
-        ev.dispatchEvent(eve);
-    }, 1000);//延时1秒后输出
-
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
       
     </div>
 
@@ -519,8 +457,6 @@ ev.dispatchEvent(eve);
           
             <a href="/tags/基础/" rel="tag"># 基础</a>
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
         </div>
       
 
@@ -532,8 +468,8 @@ ev.dispatchEvent(eve);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/CSS盒模型/" rel="next" title="CSS盒模型">
-                <i class="fa fa-chevron-left"></i> CSS盒模型
+              <a href="/2018/09/06/面向对象/" rel="next" title="面向对象">
+                <i class="fa fa-chevron-left"></i> 面向对象
               </a>
             
           </div>
@@ -541,10 +477,6 @@ ev.dispatchEvent(eve);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/04/数据类型转换/" rel="prev" title="数据类型转换">
-                数据类型转换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -696,7 +628,7 @@ ev.dispatchEvent(eve);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM事件类"><span class="nav-number">1.</span> <span class="nav-text">DOM事件类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM事件的级别"><span class="nav-number">1.1.1.</span> <span class="nav-text">DOM事件的级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM事件模型"><span class="nav-number">1.1.2.</span> <span class="nav-text">DOM事件模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM事件流"><span class="nav-number">1.1.3.</span> <span class="nav-text">DOM事件流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描述DOM事件流捕获的具体流程"><span class="nav-number">1.1.4.</span> <span class="nav-text">描述DOM事件流捕获的具体流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Event对象的常见应用"><span class="nav-number">1.1.5.</span> <span class="nav-text">Event对象的常见应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义事件"><span class="nav-number">1.1.6.</span> <span class="nav-text">自定义事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码"><span class="nav-number">1.2.</span> <span class="nav-text">源码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#通信类"><span class="nav-number">1.</span> <span class="nav-text">通信类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是同源策略及限制"><span class="nav-number">1.1.</span> <span class="nav-text">什么是同源策略及限制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#源"><span class="nav-number">1.1.1.</span> <span class="nav-text">源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#限制"><span class="nav-number">1.1.2.</span> <span class="nav-text">限制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前后端如何通信"><span class="nav-number">1.2.</span> <span class="nav-text">前后端如何通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax"><span class="nav-number">1.2.1.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket"><span class="nav-number">1.2.2.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">1.2.3.</span> <span class="nav-text">CORS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何创建Ajax"><span class="nav-number">1.3.</span> <span class="nav-text">如何创建Ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLHttpRequest对象的工作流程"><span class="nav-number">1.3.1.</span> <span class="nav-text">XMLHttpRequest对象的工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性处理"><span class="nav-number">1.3.2.</span> <span class="nav-text">兼容性处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件的触发条件"><span class="nav-number">1.3.3.</span> <span class="nav-text">事件的触发条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件的触发顺序"><span class="nav-number">1.3.4.</span> <span class="nav-text">事件的触发顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域通信的几种方式"><span class="nav-number">1.4.</span> <span class="nav-text">跨域通信的几种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">1.4.1.</span> <span class="nav-text">JSONP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash"><span class="nav-number">1.4.2.</span> <span class="nav-text">Hash</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-1"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-1"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage"><span class="nav-number">1.4.3.</span> <span class="nav-text">postMessage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-2"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-2"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket-1"><span class="nav-number">1.4.4.</span> <span class="nav-text">WebSocket</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-3"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-3"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS-1"><span class="nav-number">1.4.5.</span> <span class="nav-text">CORS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理-4"><span class="nav-number">1.4.5.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-4"><span class="nav-number">1.4.5.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">1.5.</span> <span class="nav-text">源码</span></a></li></ol></li></ol></div>
             
 
           </div>
