@@ -118,7 +118,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://minnsss.github.io/2018/09/06/原型链/原型链关系.jpg">
 <meta property="og:image" content="https://minnsss.github.io/2018/09/06/原型链/instanceof原理.jpg">
-<meta property="og:updated_time" content="2018-09-06T12:42:32.335Z">
+<meta property="og:updated_time" content="2018-09-06T12:47:34.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型链">
 <meta name="twitter:description" content="原型链创建对象有几种方法3种方法 字面量对象var o1 = {name:&amp;apos;o1&amp;apos;}; var o11 = new Object({name: &amp;apos;o11&amp;apos;}); 显式构造函数var M = function(){         this.name = &amp;apos;o2&amp;apos;} var o2 = new M(); Object.create()方法使用">
@@ -354,7 +354,7 @@
                 
               
 
-              <time title="创建时间：2018-09-06 20:42:07 / 修改时间：20:42:32" itemprop="dateCreated datePublished" datetime="2018-09-06T20:42:07+08:00">2018-09-06</time>
+              <time title="创建时间：2018-09-06 20:42:07 / 修改时间：20:47:34" itemprop="dateCreated datePublished" datetime="2018-09-06T20:42:07+08:00">2018-09-06</time>
             
 
             
@@ -432,10 +432,10 @@ var o3 = Object.create(P);
 </li>
 </ol>
 <h2 id="instanceof的原理"><a href="#instanceof的原理" class="headerlink" title="instanceof的原理"></a>instanceof的原理</h2><p><img src="/2018/09/06/原型链/instanceof原理.jpg" alt="instanceof原理"></p>
-<p>判断函数属性是否是实例原型对象(construct更严谨)</p>
-<h2 id="new运算符"><a href="#new运算符" class="headerlink" title="new运算符"></a>new运算符</h2><p>1.一个新对象被<strong>创建</strong>。它继承自foo.protype</p>
-<p>2.构造函数foo被<strong>执行</strong>。执行的时候，相应的传参会被传入，同时<strong>上下文（this）</strong>会被指定为这个新实例。new foo等同于 new foo()，只能用在不传递任何参数的情况下。</p>
-<p>3.如果构造函数<strong>返回</strong>一个对象，那么这个对象会取代整个new出来的结果。如果构造函数没有返回对象，那么new出来的结果为步骤1创建的对象</p>
+<p>判断函数属性是否是实例原型对象(<code>constructor</code>更严谨)</p>
+<h2 id="new运算符"><a href="#new运算符" class="headerlink" title="new运算符"></a>new运算符</h2><p>1.一个新对象被<strong>创建</strong>。它继承自<code>foo.prototype</code></p>
+<p>2.构造函数foo被<strong>执行</strong>。执行的时候，相应的传参会被传入，同时<strong>上下文（<code>this</code>）</strong>会被指定为这个新实例。<code>new foo</code>等同于 <code>new foo()</code>，只能用在不传递任何参数的情况下。</p>
+<p>3.如果构造函数<strong>返回</strong>一个对象，那么这个对象会取代整个<code>new</code>出来的结果。如果构造函数没有返回对象，那么<code>new</code>出来的结果为步骤1创建的对象</p>
 <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><code>proto.html</code></p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
