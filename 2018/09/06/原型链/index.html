@@ -108,21 +108,27 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript入门">
-<meta property="og:url" content="https://minnsss.github.io/2018/07/18/JavaScript入门/index.html">
+  <meta name="description" content="原型链创建对象有几种方法3种方法 字面量对象var o1 = {name:&amp;apos;o1&amp;apos;}; var o11 = new Object({name: &amp;apos;o11&amp;apos;}); 显式构造函数var M = function(){         this.name = &amp;apos;o2&amp;apos;} var o2 = new M(); Object.create()方法使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="minnsss blog">
+<meta property="og:url" content="https://minnsss.github.io/2018/09/06/原型链/index.html">
 <meta property="og:site_name" content="minnsss blog">
+<meta property="og:description" content="原型链创建对象有几种方法3种方法 字面量对象var o1 = {name:&amp;apos;o1&amp;apos;}; var o11 = new Object({name: &amp;apos;o11&amp;apos;}); 显式构造函数var M = function(){         this.name = &amp;apos;o2&amp;apos;} var o2 = new M(); Object.create()方法使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-18T14:18:48.632Z">
+<meta property="og:image" content="https://minnsss.github.io/2018/09/06/原型链/原型链关系.jpg">
+<meta property="og:image" content="https://minnsss.github.io/2018/09/06/原型链/instanceof原理.jpg">
+<meta property="og:updated_time" content="2018-09-06T12:40:20.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript入门">
+<meta name="twitter:title" content="minnsss blog">
+<meta name="twitter:description" content="原型链创建对象有几种方法3种方法 字面量对象var o1 = {name:&amp;apos;o1&amp;apos;}; var o11 = new Object({name: &amp;apos;o11&amp;apos;}); 显式构造函数var M = function(){         this.name = &amp;apos;o2&amp;apos;} var o2 = new M(); Object.create()方法使用">
+<meta name="twitter:image" content="https://minnsss.github.io/2018/09/06/原型链/原型链关系.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://minnsss.github.io/2018/07/18/JavaScript入门/"/>
+  <link rel="canonical" href="https://minnsss.github.io/2018/09/06/原型链/"/>
 
 
 
@@ -132,7 +138,7 @@
   };
 </script>
 
-  <title>JavaScript入门 | minnsss blog</title>
+  <title> | minnsss blog</title>
   
 
 
@@ -305,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/07/18/JavaScript入门/">
+    <link itemprop="mainEntityOfPage" href="https://minnsss.github.io/2018/09/06/原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="minn">
@@ -322,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript入门
+          <h1 class="post-title" itemprop="name headline">
               
             
           </h1>
@@ -347,9 +353,13 @@
                 
               
 
-              <time title="创建时间：2018-07-18 22:18:48" itemprop="dateCreated datePublished" datetime="2018-07-18T22:18:48+08:00">2018-07-18</time>
+              <time title="创建时间：2018-09-06 20:36:18 / 修改时间：20:40:20" itemprop="dateCreated datePublished" datetime="2018-09-06T20:36:18+08:00">2018-09-06</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -381,7 +391,79 @@
       
 
       
-        
+        <h1 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h1><h2 id="创建对象有几种方法"><a href="#创建对象有几种方法" class="headerlink" title="创建对象有几种方法"></a>创建对象有几种方法</h2><p>3种方法</p>
+<h3 id="字面量对象"><a href="#字面量对象" class="headerlink" title="字面量对象"></a>字面量对象</h3><pre><code>var o1 = {name:&apos;o1&apos;};
+var o11 = new Object({name: &apos;o11&apos;});
+</code></pre><h3 id="显式构造函数"><a href="#显式构造函数" class="headerlink" title="显式构造函数"></a>显式构造函数</h3><pre><code>var M = function(){
+        this.name = &apos;o2&apos;}
+var o2 = new M();
+</code></pre><h3 id="Object-create-方法"><a href="#Object-create-方法" class="headerlink" title="Object.create()方法"></a>Object.create()方法</h3><p>使用原型链连接，与前两种方法不太一样</p>
+<pre><code>var P = {name:&apos;o3&apos;};
+var o3 = Object.create(P);
+</code></pre><h2 id="原型-构造函数-对象实例-原型链"><a href="#原型-构造函数-对象实例-原型链" class="headerlink" title="原型 构造函数 对象实例 原型链"></a>原型 构造函数 对象实例 原型链</h2><h3 id="原型链的原理"><a href="#原型链的原理" class="headerlink" title="原型链的原理"></a>原型链的原理</h3><p><img src="/2018/09/06/原型链/原型链关系.jpg" alt="原型链关系"></p>
+<p>从一个实例对象往上找构造这个实例的相关联的对象，这个相关联的对象往上找又有创造他的上一级的原型对象，以此类推，一直到<code>object.prototype</code>终止</p>
+<p>原型链是js实现类与继承的基石</p>
+<p>原型链和类与继承的关系</p>
+<h3 id="原型对象-构造函数-实例的关系"><a href="#原型对象-构造函数-实例的关系" class="headerlink" title="原型对象 构造函数 实例的关系"></a>原型对象 构造函数 实例的关系</h3><ol>
+<li><p>只有函数才有<code>prototype</code>, 对象没有（函数也是对象）</p>
+</li>
+<li><p>只有实例对象有<code>__proto__</code>,函数也有<code>__proto__</code>，因为函数也是对象<code>xx.__proto__ = Function.prototype</code></p>
+</li>
+<li><p>修改了实例也就修改了实例上一级的原型对象</p>
+</li>
+</ol>
+<h2 id="instanceof的原理"><a href="#instanceof的原理" class="headerlink" title="instanceof的原理"></a>instanceof的原理</h2><p><img src="/2018/09/06/原型链/instanceof原理.jpg" alt="instanceof原理"></p>
+<p>判断函数属性是否是实例原型对象(construct更严谨)</p>
+<h2 id="new运算符"><a href="#new运算符" class="headerlink" title="new运算符"></a>new运算符</h2><p>1.一个新对象被<strong>创建</strong>。它继承自foo.protype</p>
+<p>2.构造函数foo被<strong>执行</strong>。执行的时候，相应的传参会被传入，同时<strong>上下文（this）</strong>会被指定为这个新实例。new foo等同于 new foo()，只能用在不传递任何参数的情况下。</p>
+<p>3.如果构造函数<strong>返回</strong>一个对象，那么这个对象会取代整个new出来的结果。如果构造函数没有返回对象，那么new出来的结果为步骤1创建的对象</p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><code>proto.html</code></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;原型链&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        //第一种方式：字面量
+        var o1 = {name: &apos;o1&apos;};//o1 {name: &quot;o1&quot;}
+        var o2 = new Object({name: &apos;o2&apos;});//o2 {name: &quot;o2&quot;}
+
+        //第二种方式：构造函数
+        var M = function(name){
+            this.name=name;
+        };
+        var o3 = new M(&apos;o3&apos;);//o3 M{name: &quot;o3&quot;}
+
+        //第三种方式：Object.create 原型链连接
+        var P = {name: &apos;p&apos;};
+        var o4 = Object.create(P);//o4 {}   o4.name &quot;p&quot;
+
+
+        //原型链原理
+        M.prototype.say = function(){
+            console.log(&apos;say hi&apos;);
+        }
+        var o5 = new M(&apos;o5&apos;);
+
+
+        //实现new运算符的效果 即工作原理
+        var new2 = function(func) {
+            var o = Object.create(func.prototype);//创建空对象，关联构造函数的原型对象
+            var k = func.call(o);//执行构造函数
+            if (typeof k === &apos;object&apos;)//判断构造函数的运行结果是否为对象类型
+            {
+                 return k
+            }else{
+                return o
+            }
+        }
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
       
     </div>
 
@@ -408,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/18/Vue-JS入门/" rel="next" title="Vue.JS入门基础">
-                <i class="fa fa-chevron-left"></i> Vue.JS入门基础
+              <a href="/2018/09/06/数据类型转换/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -418,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/18/ES6基础/" rel="prev" title="ES6基础（完善中）">
-                ES6基础（完善中） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/06/HTTP协议类/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -469,8 +551,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -551,6 +642,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型链"><span class="nav-number">1.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象有几种方法"><span class="nav-number">1.1.</span> <span class="nav-text">创建对象有几种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字面量对象"><span class="nav-number">1.1.1.</span> <span class="nav-text">字面量对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显式构造函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">显式构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-create-方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">Object.create()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型-构造函数-对象实例-原型链"><span class="nav-number">1.2.</span> <span class="nav-text">原型 构造函数 对象实例 原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链的原理"><span class="nav-number">1.2.1.</span> <span class="nav-text">原型链的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型对象-构造函数-实例的关系"><span class="nav-number">1.2.2.</span> <span class="nav-text">原型对象 构造函数 实例的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof的原理"><span class="nav-number">1.3.</span> <span class="nav-text">instanceof的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#new运算符"><span class="nav-number">1.4.</span> <span class="nav-text">new运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">1.5.</span> <span class="nav-text">源码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
